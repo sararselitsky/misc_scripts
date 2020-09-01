@@ -8,34 +8,39 @@ echo -e "========================="
 echo -e "obtain inputs\n"
 bam=$1
 threads=$2
-output=$3
+dup_out=$3
+nodup_out=$4
+ercc_out=$5
+
 echo -e "BAM: $bam"
 echo -e "THREADS: $threads"
-echo -e "OUTPUT: $output"
+echo -e "OUTPUT: $dup_out"
+echo -e "OUTPUT: $nodup_out"
+echo -e "OUTPUT: $ercc_out"
 echo -e "=========================\n\n"
 
 
 # define output
 echo -e "========================="
 echo -e "define outputs\n"
-dup_bam="$output/dup.bam"
-dup_stats="$output/dup.stats.txt"
-dup_insert_size="$output/dup.insert_size.txt"
-ercc_bam="$output/ercc.bam"
-ercc_stats="$output/ercc.stats.txt"
-ercc_insert_size="$output/ercc.insert_size.txt"
-non_dup_bam="$output/non_dup_bam"
-non_dup_stats="$output/non_dup.status.txt"
-non_dup_insert_size="$output/non_dup.insert_size.txt"
-echo -e "DUP_BAM: $output/$dup_bam"
-echo -e "DUP_STATS: $output/$dup_stats"
-echo -e "DUP_INSERT_SIZE: $output/$dup_insert_size"
-echo -e "ERCC_BAM: $output/$ercc_bam"
-echo -e "ERCC_STATS: $output/$ercc_stats"
-echo -e "ERCC_INSERT_SIZE: $output/$ercc_insert_size"
-echo -e "NON_DUP_BAM: $output/$non_dup_bam"
-echo -e "NON_DUP_STATS: $output/$non_dup_stats"
-echo -e "NON_DUP_INSERT_SIZE: $output/$non_dup_insert_size"
+dup_bam="dup.bam"
+dup_stats="dup.stats.txt"
+dup_insert_size=$dup_out
+ercc_bam="ercc.bam"
+ercc_stats="ercc.stats.txt"
+ercc_insert_size=$ercc_out
+non_dup_bam="non_dup_bam"
+non_dup_stats="non_dup.status.txt"
+non_dup_insert_size=$nodup_out
+echo -e "DUP_BAM: $dup_bam"
+echo -e "DUP_STATS: $dup_stats"
+echo -e "DUP_INSERT_SIZE: $dup_insert_size"
+echo -e "ERCC_BAM: $ercc_bam"
+echo -e "ERCC_STATS: $ercc_stats"
+echo -e "ERCC_INSERT_SIZE: $ercc_insert_size"
+echo -e "NON_DUP_BAM: $non_dup_bam"
+echo -e "NON_DUP_STATS: $non_dup_stats"
+echo -e "NON_DUP_INSERT_SIZE: $non_dup_insert_size"
 echo -e "=========================\n\n"
 
 
